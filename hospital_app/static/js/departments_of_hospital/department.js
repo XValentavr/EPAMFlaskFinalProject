@@ -36,12 +36,16 @@ function is_on_edit_department(department, identifier) {
     })
         .then((response) => response.json())
         .then(() => {
-            window.location = '/hospitals';
-            alert('Its OK. I have changed a new department of hospital')
+            swal("You have seccesfully changed new department of hospital")
+                .then(() => {
+                    window.location = '/hospitals';
+                });
         })
         .catch(() => {
-            window.location = document.URL;
-            alert('An error occured. Please check insert data and try again')
+            swal("An error occured. Please check insert data.")
+                .then(() => {
+                    window.location = document.URL;
+                });
         })
 }
 
@@ -56,11 +60,15 @@ function is_on_add_department(department) {
     })
         .then((response) => response.json())
         .then(() => {
-            window.location = '/hospitals';
-            alert('Its OK. I have added a new department of hospital')
+            swal("You have seccesfully added new department of hospital")
+                .then(() => {
+                    window.location = '/hospitals';
+                });
         })
         .catch(() => {
-            window.location = '/hospitals/add';
-            alert('An error occured. Please check insert data and try again')
+            swal("An error occured. Please check insert data.")
+                .then(() => {
+                    window.location = '/hospitals/add';
+                });
         })
 }

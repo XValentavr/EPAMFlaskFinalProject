@@ -74,7 +74,9 @@ function api_delete_employee(identifier) {
             window.location.href = `/employees`;
         })
         .catch(() => {
-            window.location = document.URL;
-            alert('An error occured. Please try again')
+            swal("An error occured. Please check insert data.")
+                .then(() => {
+                    window.location = document.URL;
+                });
         })
 }

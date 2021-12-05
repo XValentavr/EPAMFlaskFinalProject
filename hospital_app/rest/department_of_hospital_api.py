@@ -42,6 +42,8 @@ class AllDepartments(Resource):
         args = parser.parse_args()
         if args['name'] is None or args['to_do'] is None:
             abort(Response("Couldn't add department of hospital. Check insert data", 400))
+        elif args['name'].strip() == '' or args['to_do'].strip() == '':
+            abort(Response("Couldn't edit department. Missing data", 400))
         elif args['name'] == '' or args['to_do'] == '':
             abort(Response("Couldn't add department of hospital. Check insert data", 400))
         else:
@@ -82,6 +84,8 @@ class SingleDepartment(Resource):
         args = parser.parse_args()
         hospital = departmets_of_hospital.get_department_by_id(identifier)
         if args['name'] == '' or args['to_do'] == '':
+            abort(Response("Couldn't edit department. Missing data", 400))
+        if args['name'].strip() == '' or args['to_do'].strip() == '':
             abort(Response("Couldn't edit department. Missing data", 400))
         if args['name'] is None:
             args['name'] = hospital['name']

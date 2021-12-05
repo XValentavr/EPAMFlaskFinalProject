@@ -5,6 +5,7 @@ fetch("/api/hospitals")
     })
     .catch((error) => console.log(error))
 
+
 function DisplayGotData(data) {
     if (data.length === 0) {
         let empty = document.getElementById("empty");
@@ -14,6 +15,7 @@ function DisplayGotData(data) {
         CreateTable(GetData(data));
     }
 }
+
 
 function GetData(data) {
     let information = []
@@ -81,6 +83,6 @@ function api_delete(identifier) {
         })
         .catch(() => {
             window.location = document.URL;
-            alert('An error occured. Please try again')
+            swal("An error occured. Please try again.");
         })
 }
