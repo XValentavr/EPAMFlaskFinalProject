@@ -1,10 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="canonical" href="/home">
+    <meta name="description" content="It's start hospital page">
+    <title>Hospital</title>
 <body>
+<style>
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
 
+    table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .wrapper {
+        display: table;
+        width: 100%;
+    }
+
+    .left {
+        display: table-cell;
+        text-align: left;
+    }
+
+    .right {
+        display: table-cell;
+        text-align: right;
+    }
+
+    .button_add, .forButton {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+</style>
+<ul style="
+         list-style: none;
+         background: #2F4F4F;
+         height: 60px;
+         margin: 0;
+         padding: 0;
+         color: #006400;
+         font-size: 20px;
+         overflow: hidden;">
+    <li>HOSPITAL APP</li>
+    <li><a href="/home" style="
+            float: left;
+            margin: 18px 40px 0 50px;
+            color: #FF4343;
+            text-decoration: none;">Home page</a>
+    </li>
+    <li><a href="/hospital" style="
+            float: left;
+            margin: 18px 40px 0 50px;
+            color: #FF4343;
+            text-decoration: none;">Hospital</a></li>
+    <li><a href="/employees" style="
+            float: left;
+            margin: 18px 40px 0 50px;
+            color: #FF4343;
+            text-decoration: none;">Employees</a>
+    </li>
+    <li style="
+            margin: 18px 40px 0 50px;
+            float: right;
+            color: #FF4343;text-decoration: none;">
+        <a href="/logout">Logout</a>
+    </li>
+    <li style="
+            margin: 18px 10px 0 50px;
+            float: center;
+            color: #FF4343;
+            text-decoration: none;">
+        <a href="/login">Login</a>
+    </li>
+</ul>
+<style>
+    body {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+<div class="wrapper">
+    <div class="left">
+        <button class="forButton">Search born on date</button>
+    </div>
+    <div class="right">
+        <button class="forButton" onclick='ShowHidden("BornBeetween")'>Search beetween dates
+        </button>
+    </div>
+</div>
+<table style="font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2%;">
+    <thead>
+    <tr>
+        <th>Full name</th>
+        <th>Date of birth</th>
+        <th>Salary</th>
+        <th>Department of hospital</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>John Doe</td>
+        <td>07/12/1999</td>
+        <td>1300</td>
+        <td>Paramedical</td>
+        <td><a href="">Edit</a></td>
+        <td><a href="">Delete</a></td>
+    </tr>
+    <tr>
+        <td>Jane Wilson</td>
+        <td>01/08/1993</td>
+        <td>1300</td>
+        <td>Phisical medicine</td>
+        <td><a href="">Edit</a></td>
+        <td><a href="">Delete</a></td>
+    </tr>
+    <tr>
+        <td>Will Hunting</td>
+        <td>11/30/1989</td>
+        <td>2100</td>
+        <td>Nurcing department</td>
+        <td><a href="">Edit</a></td>
+        <td><a href="">Delete</a></td>
+    </tr>
+    </thead>
+</table>
+<div style="text-align: center">
+    <a href="" class="button_add" role="button">Add employee</a>
+</div>
+<div style="
+         position: fixed;
+         bottom: 2px;
+         width: 100%;
+         background-color: gray;
+         color: white;
+         text-align: center;">
+    <ul style="
+            list-style: none;
+            background: #2F4F4F;
+            height: 60px;
+            margin: 0;
+            padding: 0;
+            color: #006400;
+            font-size: 20px;
+            overflow: hidden;">
+        <li>
+            <button style="
+                  background: cornflowerblue;
+                  color: white;
+                  float:left;
+                  border: none;
+                  padding: 5px;
+                  border-radius: 10px;
+                  margin: 5px;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                  outline: none;">
+                Get more information
+            </button>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+            <script>
+                document.querySelector(".first").addEventListener('click', function () {
+                    swal("This is simple web application.\nYou can check and search for departments of hospital and employees." +
+                        "\nIf you are admin you can delete, add and change information.");
+                });
+            </script>
+        </li>
+        <li style="color:black;float: right"> 2021 - All Right Reserved.</li>
+    </ul>
+</div>
 </body>
 </html>

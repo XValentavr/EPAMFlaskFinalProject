@@ -79,8 +79,8 @@ function api_delete(identifier) {
         .then(() => {
             window.location.href = `/hospitals`;
         })
-            .catch(() => {
-                window.location = document.URL;
-                alert('An error occured. Please try again')
-            })
+        .catch(() => {
+            window.location = document.URL;
+            alert('An error occured. Please try again')
+        })
 }

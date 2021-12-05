@@ -51,7 +51,6 @@ class AllEmployees(Resource):
         :return: the list of all employees in json format
         """
         args = request.args
-
         if len(args) == 2 and validate_date(args['start_date']) and validate_date(args['end_date']):
             return jsonify(employee_of_hospital.born_between_dates(start_date=args['start_date'],
                                                                    end_date=args['end_date']))
