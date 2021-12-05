@@ -16,7 +16,10 @@ from flask_migrate import Migrate
 database = SQLAlchemy()
 login_manager = LoginManager()
 
+
 def create_app():
+    # create logger
+    create_logger()
     # create app
     app = Flask(__name__)
     app.config.from_object(Config)
