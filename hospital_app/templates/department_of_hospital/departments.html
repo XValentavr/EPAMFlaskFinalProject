@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="{{ url_for('user.get_department_of_hospital') }}">
+    <meta name="description" content="It's all departments hospital">
+    <title>Departments of hospital</title>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{ cat }}">{{ msg }}</div>
+{% endfor %}
+<style>
+    body {
+        background-image: none
+    }
+</style>
+
+<table id="table">
+    <thead>
+    <tr>
+        {% if session.login is defined %}
+        <th>Name</th>
+        <th>What's doing</th>
+        <th>Salary</th>
+        <th>Employees</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        {% else %}
+        <th>Name</th>
+        <th>What's doing</th>
+        <th>Salary</th>
+        <th>Employees</th>
+        {% endif %}
+    </tr>
+    </thead>
+</table>
+{% if session.login is defined %}
+<div style="text-align: center">
+    <a href="{{ url_for('user.add_department_of_hospital') }}" class="button_add" role="button">Add department</a>
+</div>
+{% endif %}
+<p id="session" hidden>{{ session }}</p>
+<script type="text/javascript"
+        src="{{ url_for('static', filename='js/departments_of_hospital/departments.js') }}"></script>
+{% endblock %}
