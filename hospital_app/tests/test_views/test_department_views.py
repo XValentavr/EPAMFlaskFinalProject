@@ -34,24 +34,8 @@ class TestDepartmentOfHospitalViews(ConfigurationTest):
         Tests whether the get request on add department page works correctly,
         returning the status code 200
         """
-        response = self.app.get('/hospital/add')
+        response = self.app.get('/hospitals/add')
         self.assertEqual(200, response.status_code)
-
-    def test_department_of_hospital_added(self):
-        """
-        Tests whether the get request on add department page works correctly,
-        and redirects to departments page, returning the status code 302
-        """
-        response = self.app.get('/hospital/add?added=true')
-        self.assertEqual(302, response.status_code)
-
-    def test_department_of_hospital_not_added(self):
-        """
-        Tests whether the get request on add department page works correctly,
-        and redirects to department page, returning the status code 302
-        """
-        response = self.app.get('/hospital/add?added=false')
-        self.assertEqual(302, response.status_code)
 
     def test_edit_department(self):
         """
@@ -61,30 +45,8 @@ class TestDepartmentOfHospitalViews(ConfigurationTest):
         department = Hospital(name="first hospital", to_do="something do")
         database.session.add(department)
         database.session.commit()
-        response = self.app.get('/hospital/edit/1')
+        response = self.app.get('/hospitals/edit/1')
         self.assertEqual(200, response.status_code)
-
-    def test_department_of_hospital_edited(self):
-        """
-        Tests whether the get request on edit department page works correctly,
-        and redirects to departments page, returning the status code 302
-        """
-        department = Hospital(name="department1", to_do="to_do")
-        database.session.add(department)
-        database.session.commit()
-        response = self.app.get('/hospital/edit/1?edited=true')
-        self.assertEqual(302, response.status_code)
-
-    def test_department_not_edited(self):
-        """
-        Tests whether the get request on edit department page works correctly,
-        and redirects to department page, returning the status code 302
-        """
-        department = Hospital(name="department2", to_do="description1")
-        database.session.add(department)
-        database.session.commit()
-        response = self.app.get('/hospital/edit/1?edited=false')
-        self.assertEqual(302, response.status_code)
 
     def test_delete_department(self):
         """
@@ -94,5 +56,5 @@ class TestDepartmentOfHospitalViews(ConfigurationTest):
         department = Hospital(name="first hospital8", to_do="2")
         database.session.add(department)
         database.session.commit()
-        response = self.app.get('/hospital/delete/1')
+        response = self.app.get('/hospitals/delete/1')
         self.assertEqual(302, response.status_code)

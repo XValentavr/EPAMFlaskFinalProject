@@ -22,14 +22,6 @@ class TestEmployeeViews(ConfigurationTest):
         response = self.app.get('/employees')
         self.assertEqual(200, response.status_code)
 
-    def test_wrong_date_args(self):
-        """
-        Tests whether the get request on employees page with success=false param
-        works correctly, returning the status code 302
-        """
-        response = self.app.get('/employees?success=false')
-        self.assertEqual(302, response.status_code)
-
     def test_add_employee(self):
         """
         Tests whether the get request on add employee page works correctly,

@@ -37,14 +37,6 @@ class TestAuthentificationView(ConfigurationTest):
         assert response.status_code == http.HTTPStatus.OK
         self.assertTrue(Admin.is_authenticated)
 
-    def test_logout_not_authentificated(self):
-        """
-        Tests whether the get request on logout page works correctly if user is not authentificated,
-        returning the status code 401
-        """
-        response = self.app.get('/logout')
-        self.assertEqual(401, response.status_code)
-
     def test_logout_authentificated(self):
         """
         Tests whether the get request on logout page works correctly if user is  authentificated,
