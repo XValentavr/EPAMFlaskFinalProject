@@ -19,12 +19,12 @@ def populate_database():
     :return: None
     """
     database = SQLAlchemy(create_app())
-    admin1 = Admin('admin', generate_password_hash('12345'))
-    admin2 = Admin('Valentyn', generate_password_hash('iwilly17'))
+    admin1 = Admin('admin', generate_password_hash('12345'), 'Valentyn Volysnkyi')
+    admin2 = Admin('Valentyn', generate_password_hash('iwilly17'), 'Ivan Petrov')
 
-    employee_1 = Employee(name='John Doe', salary=1300, date_of_birth=date(1999, 7, 12), hospital_id=1)
-    employee_2 = Employee(name='Jane Wilson', salary=1300, date_of_birth=date(1993, 1, 8), hospital_id=2)
-    employee_3 = Employee(name='Will Hunting', salary=1300, date_of_birth=date(1989, 11, 30), hospital_id=3)
+    employee_1 = Employee(name='John Doe', salary=1300, date_of_birth=date(1999, 7, 12), hospital_id=50)
+    employee_2 = Employee(name='Jane Wilson', salary=1300, date_of_birth=date(1993, 1, 8), hospital_id=51)
+    employee_3 = Employee(name='Will Hunting', salary=1300, date_of_birth=date(1989, 11, 30), hospital_id=52)
 
     hospital_1 = Hospital(name='Paramedical', to_do='something do1')
     hospital_2 = Hospital(name='Phisical medicine', to_do='something do3')

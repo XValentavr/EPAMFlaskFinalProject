@@ -3,7 +3,10 @@ if (document.title === "Edit department") {
     fetch(`/api/hospitals/${identifier}`)
         .then((response) => response.json())
         .catch(() => {
-            window.location = '/hospitals';
+            swal("There is no this department. Please select currect department")
+                .then(() => {
+                    window.location = '/hospitals';
+                });
         })
 }
 

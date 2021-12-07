@@ -2,7 +2,7 @@
 This module represents the logic on routes starting with /hospital
 """
 from flask import render_template, redirect, flash, url_for, request, session
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from . import user
 
@@ -13,7 +13,7 @@ def get_department_of_hospital():
         This function renders the departments of hospital template
         on the /hospital route
     """
-    return render_template('department_of_hospital/departments.html', session=session)
+    return render_template('department_of_hospital/departments.html', session=current_user.is_authenticated)
 
 
 @user.route('/hospitals/delete/<int:identifier>', methods=['GET'])

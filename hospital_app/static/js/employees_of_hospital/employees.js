@@ -46,7 +46,7 @@ function CreateTable(data) {
             let text = document.createTextNode(element[keys[j]]);
             cell.appendChild(text);
         }
-        if (session.includes('login')) {
+        if (session.includes('True')) {
             //create edit link
             let cell = row.insertCell();
             let a = document.createElement("a");

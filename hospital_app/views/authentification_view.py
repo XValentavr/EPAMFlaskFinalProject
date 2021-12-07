@@ -2,7 +2,7 @@
 This module represents the logic of authentication of user
 """
 from flask import render_template, redirect, flash, session, url_for, request
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
 from . import user
 from . import WTForm
 from ..models.admin import Admin
@@ -26,9 +26,9 @@ def login():
     :return: html page
     """
     session.permanent = True
-    if 'login' in session:
+    if current_user.is_authenticated:
         flash('You are already authorized', 'success')
-        return redirect(request.referrer)
+        return redirect(url_for('user.home_page'))
     form = WTForm.LoginForm()
     if form.validate_on_submit():
         root_user = get_admin_by_name(form.username.data)
@@ -39,7 +39,7 @@ def login():
             flash('An error occured. Try to enter correct name of password', 'error')
             return redirect(url_for('user.login'))
         login_user(root_user)
-        session['login'] = True
+        session['admin'] = root_user.username
         return redirect(url_for('user.home_page'))
     return render_template('login.html', form=form)
 
@@ -52,6 +52,4 @@ def logout():
     Allow employee to logout moving to home page.
     """
     logout_user()
-    if 'login' in session:
-        session.pop('login')
     return redirect(request.referrer)

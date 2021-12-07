@@ -7,13 +7,13 @@ Also handle an error status
 
 # pylint: disable=cyclic-import
 from flask import Blueprint
-from flask import render_template
+from flask import render_template, session
 
 user = Blueprint('user', __name__)
 from . import authentification_view
 from . import hospital_department_view
 from . import employees_view
-
+from . import profile_view
 
 # because the blueprint must be registered before importing the views
 
@@ -24,7 +24,7 @@ def home_page():
     """
     Render the home page template on the / route
     """
-    return render_template('index.html')
+    return render_template('index.html', session=session)
 
 
 @user.app_errorhandler(404)

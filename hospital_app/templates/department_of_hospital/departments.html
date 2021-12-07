@@ -21,7 +21,7 @@
     <table id="table">
         <thead>
         <tr>
-            {% if session.login is defined %}
+            {% if current_user.is_authenticated %}
                 <th>Name</th>
                 <th>What's doing</th>
                 <th>Employees</th>
@@ -40,13 +40,13 @@
     <h1 class="text-center margin-top"><small id="empty"></small></h1>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
 
-    {% if session.login is defined %}
+    {% if current_user.is_authenticated %}
         <div style="text-align: center">
             <a href="{{ url_for('user.add_department_of_hospital') }}" class="button_add" role="button">Add
                 department</a>
         </div>
     {% endif %}
-    <p id="session" hidden>{{ session }}</p>
+    <p id="session" hidden>{{ current_user.is_authenticated  }}</p>
     <script type="text/javascript"
             src="{{ url_for('static', filename='js/departments_of_hospital/departments.js') }}"></script>
 {% endblock %}

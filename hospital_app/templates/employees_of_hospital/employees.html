@@ -50,7 +50,7 @@
     <table id="table">
         <thead>
         <tr>
-            {% if session.login is defined %}
+            {% if current_user.is_authenticated %}
                 <th>Full name</th>
                 <th>Date of birth</th>
                 <th>Salary</th>
@@ -68,14 +68,14 @@
     </table>
     <h1 class="text-center margin-top"><small id="empty"></small></h1>
 
-    {% if session.login is defined %}
+    {% if current_user.is_authenticated %}
         <div style="text-align: center">
             <a href="{{ url_for('user.add_employee') }}" class="button_add" role="button">Add
                 employee</a>
         </div>
     {% endif %}
 
-    <p id="session" hidden>{{ session }}</p>
+    <p id="session" hidden>{{ current_user.is_authenticated }}</p>
     <script type="text/javascript"
             src="{{ url_for('static', filename='js/employees_of_hospital/employees.js') }}"></script>
     <script>
