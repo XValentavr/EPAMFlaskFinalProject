@@ -34,10 +34,12 @@ class Admin(UserMixin, database.Model):
     #: admin's avatar
     avatar = database.Column(database.BLOB)
 
-    def __init__(self, username, password, full_name):
+    def __init__(self, username, password, avatar, full_name):
         #: admin's name
         self.username = username
         #: admin's date of birth
         self.password = password
         #: admin's full name
         self.full_name = full_name
+        #: admin's avatar
+        self.avatar = avatar

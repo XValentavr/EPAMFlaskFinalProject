@@ -3,6 +3,7 @@ This module represents the logic of authentication of user
 """
 from flask import render_template, session, make_response, request, flash, redirect, url_for
 from flask_login import login_required
+from hospital_app import create_app
 from . import user
 from ..service.admin import get_avatar, get_admin_by_name, update_avatar, check_if_is_available
 

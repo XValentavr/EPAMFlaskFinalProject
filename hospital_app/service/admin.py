@@ -4,7 +4,7 @@ This module defines crud operations to work with admin table
 from flask import url_for
 
 from hospital_app.models.admin import Admin
-from hospital_app import create_app, database
+from hospital_app import database, create_app
 
 
 def get_admin_by_name(username: str):

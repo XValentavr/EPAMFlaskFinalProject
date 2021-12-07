@@ -1,31 +1,41 @@
+<head>
+    <link type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+    <link rel="canonical" href="{{ url_for('user.profile') }}">
+    <meta name="description" content="It's profile page">
+    <title>Profile page</title>
+</head>
 {% extends 'base.html' %}
 
 {% block content %}
     {{ super() }}
     <style>
         body {
-            background-image: none
+            background-image: none;
+            background-color: lightgray;;
         }
     </style>
     {% for cat, msg in get_flashed_messages(True) %}
         <div class="flash {{ cat }}">{{ msg }}</div>
     {% endfor %}
-    <table border="0" class="profile-table">
-        <tr>
-            <td valign="top">
-                <div class="profile-ava"><img src="{{ url_for('user.avatar') }}"></div>
-                <div class="profile-load">
-                    <form action="{{ url_for('user.upload') }}" method="POST" enctype="multipart/form-data">
-                        <p><input type="file" name="file">
-                        <p><input type="submit" value="Загрузить">
-                    </form>
-                </div>
-            </td>
-            <td valign="top" class="profile-panel">
-                <ul class="profile-info">
-                    <li>Имя: {{ admin_profile.full_name }}</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+    <div class="wrapper">
+        <ul class="profile-info">
+            <li>Your name: {{ admin_profile.full_name }}</li>
+        </ul>
+        <div class="profile-ava"><img src="{{ url_for('user.avatar') }}" alt=""></div>
+    </div>
+    <div class="profile-load">
+        <form action="{{ url_for('user.upload') }}" method="POST" enctype="multipart/form-data">
+            <p><input type="file" name="file" value="Select file">
+            <p><input type="submit" value="Download">
+        </form>
+        <div style="text-align: center">
+            <a href="{{ url_for('user.get_department_of_hospital') }}">Change or add
+                department</a>
+        </div>
+        <div style="text-align: center">
+            <a href="{{ url_for('user.get_employees') }}">Change or add
+                employees</a>
+        </div>
+    </div>
+
 {% endblock %}

@@ -14,7 +14,7 @@ from hospital_app.tests.ConfigurationTests import ConfigurationTest
 
 class TestAuthentificationView(ConfigurationTest):
     """
-    This is the class for admin views test cases
+    This is the class for auth views test cases
     """
 
     def setUp(self):

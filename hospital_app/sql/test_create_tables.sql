@@ -1,8 +1,10 @@
 CREATE TABLE IF NOT EXISTS test_admin
 (
-    id       integer PRIMARY KEY auto_increment,
-    username varchar(255) NOT NULL,
-    password text         NOT NULL,
+    id        integer PRIMARY KEY auto_increment,
+    username  varchar(255) NOT NULL,
+    password  text         NOT NULL,
+    full_name text         NOT NULL,
+    avatar    BLOB,
     CONSTRAINT UNIQUE (username)
 );
 
