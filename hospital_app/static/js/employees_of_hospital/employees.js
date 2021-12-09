@@ -80,3 +80,59 @@ function api_delete_employee(identifier) {
                 });
         })
 }
+
+function get_employee_born_on_date() {
+    let table = document.getElementById("table");
+    let rowCount = table.rows.length;
+    for (let i = rowCount - 1; i >= 1; i--) {
+        table.deleteRow(i);
+    }
+    let date = document.getElementById('curdate').value
+    fetch('/api/employees?date=' + date)
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.length > 0) {
+                let h1 = document.querySelector("h1");
+                h1.innerHTML = "Search results";
+                CreateTable(GetData(data));
+            } else {
+                let h1 = document.querySelector("h1");
+                h1.innerHTML = "No employees were found";
+            }
+        })
+        .catch(() => {
+            swal("An error occured. Please check insert data.")
+                .then(() => {
+                    window.location = document.URL;
+                });
+        })
+}
+
+function get_employees_born_beetween_dates() {
+    let table = document.getElementById("table");
+    let rowCount = table.rows.length;
+    for (let i = rowCount - 1; i >= 1; i--) {
+        table.deleteRow(i);
+    }
+    let start_date = document.getElementById('start_date').value
+    let finish_date = document.getElementById('finish_date').value
+
+    fetch('/api/employees?start_date=' + start_date + "&end_date=" + finish_date)
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.length > 0) {
+                let h1 = document.querySelector("h1");
+                h1.innerHTML = "Search results";
+                CreateTable(GetData(data));
+            } else {
+                let h1 = document.querySelector("h1");
+                h1.innerHTML = "No employees were found";
+            }
+        })
+        .catch(() => {
+            swal("An error occured. Please check insert data.")
+                .then(() => {
+                    window.location = document.URL;
+                });
+        })
+}

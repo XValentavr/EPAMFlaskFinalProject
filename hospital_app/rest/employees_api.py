@@ -27,7 +27,10 @@ def validate_date(date):
 
     if re.search('[a-zA-Zа-яА-ЯҐґ]', date):
         return False
-    return bool(time.strptime(date, '%m/%d/%Y'))
+    try:
+        return bool(time.strptime(date, '%m/%d/%Y'))
+    except ValueError:
+        return False
 
 
 def abort_if_employee_doesnt_exist(identifier):

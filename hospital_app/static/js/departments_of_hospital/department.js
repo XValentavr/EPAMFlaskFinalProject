@@ -21,11 +21,10 @@ function checker_where_are_you() {
 function get_data() {
     let name = document.getElementById("Name of department").value;
     let to_do = document.getElementById('to_do').value
-    let department = {
+    return {
         'name': name,
         'to_do': to_do
     }
-    return department
 }
 
 function is_on_edit_department(department, identifier) {

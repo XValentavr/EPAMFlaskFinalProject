@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="canonical" href="{{ url_for('user.get_department_of_hospital') }}">
-    <meta name="description" content="It's all departments hospital">
-    <title>Departments of hospital</title>
+    <meta name="description" content="It's all employees of hospital">
+    <title>Employees of hospital</title>
 </head>
 {% extends 'base.html' %}
 {% block content %}
@@ -27,6 +27,13 @@
                     <label for="curdate"></label>
                     <input type="text" id="curdate" placeholder="mm/dd/yyyy">
                 </div>
+                <div>
+                    <button type="submit" value="ok" onclick="get_employee_born_on_date()">Search
+                    </button>
+                </div>
+                <a href="{{ url_for('user.get_employees') }}">
+                    <button>Back</button>
+                </a>
             </div>
         </div>
         <div class="right">
@@ -36,14 +43,20 @@
                 <div class="date">
                     <label for="date">Start date:</label>
                     <label for="start_date"></label>
-                    <input type="text" id="curdate" placeholder="mm/dd/yyyy">
+                    <input type="text" id="start_date" placeholder="mm/dd/yyyy">
                 </div>
                 <div class="date">
                     <label for="date">Finish date:</label>
                     <label for="finish_date"></label>
-                    <input type="text" id="curdate" placeholder="mm/dd/yyyy">
+                    <input type="text" id="finish_date" placeholder="mm/dd/yyyy">
                 </div>
-
+                <div>
+                    <button type="submit" value="ok" onclick="get_employees_born_beetween_dates()">Search
+                    </button>
+                </div>
+                <a href="{{ url_for('user.get_employees') }}">
+                    <button>Back</button>
+                </a>
             </div>
         </div>
     </div>

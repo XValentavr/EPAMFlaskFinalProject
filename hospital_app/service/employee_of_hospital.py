@@ -81,9 +81,10 @@ def update_employee(identifier: int, name: str, salary: int, date_of_birth: str,
     :param hospital_id: id of department of hospital where employee works
     "
     """
+    print(hospital_id)
     employee = Employee.query.get_or_404(identifier)
     employee.name = name
-    employee.department_id = hospital_id if hospital_id != '' else None
+    employee.hospital_id = hospital_id if hospital_id != '' else None
     employee.salary = salary
     employee.date_of_birth = datetime.strptime(date_of_birth, '%m/%d/%Y')
     database.session.add(employee)

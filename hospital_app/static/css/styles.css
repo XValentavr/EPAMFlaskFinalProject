@@ -155,6 +155,10 @@ div.login {
 }
 
 .footer {
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
     margin-top: 40%;
     bottom: 0;
     height: 50px;
