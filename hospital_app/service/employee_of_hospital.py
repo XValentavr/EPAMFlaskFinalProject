@@ -81,7 +81,6 @@ def update_employee(identifier: int, name: str, salary: int, date_of_birth: str,
     :param hospital_id: id of department of hospital where employee works
     "
     """
-    print(hospital_id)
     employee = Employee.query.get_or_404(identifier)
     employee.name = name
     employee.hospital_id = hospital_id if hospital_id != '' else None

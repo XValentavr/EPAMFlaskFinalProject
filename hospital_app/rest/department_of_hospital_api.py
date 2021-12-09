@@ -83,14 +83,13 @@ class SingleDepartment(Resource):
         """
         args = parser.parse_args()
         hospital = departmets_of_hospital.get_department_by_id(identifier)
+        if args['name'] is None or args['to_do'] is None:
+            abort(Response("Couldn't edit department. Missing data", 400))
         if args['name'] == '' or args['to_do'] == '':
             abort(Response("Couldn't edit department. Missing data", 400))
         if args['name'].strip() == '' or args['to_do'].strip() == '':
             abort(Response("Couldn't edit department. Missing data", 400))
-        if args['name'] is None:
-            args['name'] = hospital['name']
-        if args['to_do'] is None:
-            args['to_do'] = hospital['to_do']
+
         departmets_of_hospital.update_department(identifier, args.get('name', hospital['name']),
                                                  args.get('to_do', hospital['to_do']))
         return "Department updated", 200

@@ -20,8 +20,8 @@ class TestAdminService(ConfigurationTest):
         """
         Adds  test records and tests the result
         """
-        admin1 = Admin(username="12345", password="admin", full_name='Name')
-        admin2 = Admin(username="admin", password="12345", full_name='Name2')
+        admin1 = Admin(username="12345", password="admin", avatar=None, full_name='Name')
+        admin2 = Admin(username="admin", password="12345", avatar=None, full_name='Name2')
         database.session.add(admin1)
         database.session.add(admin2)
         database.session.commit()

@@ -51,26 +51,6 @@ def delete_department(identifier: int) -> None:
     database.session.commit()
 
 
-def get_average_salary(hospital: str) -> float:
-    """
-    This function is used to get average salary of the department
-    :return: the average salary of the department
-    """
-    employees = Employee.query.filter_by(hospital_id=hospital['id']).all()
-    # declare a variable for average salary
-    average_salary = 0
-
-    for employee in employees:
-        # sum all the salaries from the department
-        average_salary += employee.salary
-
-    # calculate the average value
-    if len(employees) > 0:
-        average_salary /= len(employees)
-
-    return average_salary
-
-
 def get_department_by_id(identifier: int):
     """
     This function is used to get the single department by id

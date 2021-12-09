@@ -79,21 +79,3 @@ class TestDepartmentOfHospitalService(ConfigurationTest):
         database.session.add(department)
         database.session.commit()
         self.assertEqual('<Hospital: department1>', repr(department))
-
-    def test_get_average_salary(self):
-        """
-        Adds a department and a few employees and tests whether the average salary
-        has an expected value
-        """
-        department = Hospital(name="department1", to_do="description1")
-        database.session.add(department)
-        date1 = datetime.strptime('02/23/1990', '%m/%d/%Y').date()
-        date2 = datetime.strptime('05/16/1996', '%m/%d/%Y').date()
-        employee1 = Employee(name="name1", date_of_birth=date1,
-                             salary=1500, hospital_id=1)
-        employee2 = Employee(name="second-name", date_of_birth=date2,
-                             salary=2500, hospital_id=1)
-        database.session.add(employee1)
-        database.session.add(employee2)
-        database.session.commit()
-        self.assertEqual(2000, departmets_of_hospital.get_average_salary(department.json()))

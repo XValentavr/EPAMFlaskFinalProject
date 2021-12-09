@@ -133,7 +133,7 @@ class TestDepartmentApi(ConfigurationTest):
         response = self.app.put('/api/hospitals/1',
                                 data=json.dumps(hospital2),
                                 content_type='application/json')
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(400, response.status_code)
 
     def test_editing_none_description(self):
         """
@@ -150,7 +150,7 @@ class TestDepartmentApi(ConfigurationTest):
         response = self.app.put('/api/hospitals/1',
                                 data=json.dumps(hospital2),
                                 content_type='application/json')
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(400, response.status_code)
 
     def test_editing_empty_description(self):
         """
