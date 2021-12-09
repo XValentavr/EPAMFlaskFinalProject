@@ -4,7 +4,6 @@ This module defines crud operations to work with departments table
 # local imports
 from hospital_app import database
 from ..models.hospital import Hospital
-from ..models.employee import Employee
 
 
 def get_hospital_department() -> list:

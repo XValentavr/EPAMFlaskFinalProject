@@ -1,4 +1,4 @@
-fetch("/api/hospitals")
+fetch("/api/departments")
     .then((response) => response.json())
     .then((data) => {
         DisplayGotData(data);
@@ -58,7 +58,7 @@ function CreateTable(data) {
             //create edit link
             let cell = row.insertCell();
             let a = document.createElement("a");
-            a.setAttribute("href", `/hospitals/edit/${element['identifier']}`);
+            a.setAttribute("href", `/departments/edit/${element['identifier']}`);
             let text = document.createTextNode("Edit");
             a.appendChild(text);
             cell.appendChild(a);
@@ -74,12 +74,12 @@ function CreateTable(data) {
 }
 
 function api_delete(identifier) {
-    fetch(`/api/hospitals/${identifier}`, {
+    fetch(`/api/departments/${identifier}`, {
         method: 'DELETE'
     })
         .then((response) => response.json())
         .then(() => {
-            window.location.href = `/hospitals`;
+            window.location.href = `/departments`;
         })
         .catch(() => {
             window.location = document.URL;

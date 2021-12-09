@@ -1,4 +1,4 @@
-fetch("/api/hospitals")
+fetch("/api/departments")
     .then((response) => response.json())
     .then((data) => {
         let departments = SelectDepartmentOfHospital(data);

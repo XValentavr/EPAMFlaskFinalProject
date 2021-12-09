@@ -14,8 +14,8 @@ def create_api(application):
     api = Api(application)
 
     # adding the department resources
-    api.add_resource(department_of_hospital_api.AllDepartments, '/api/hospitals')
-    api.add_resource(department_of_hospital_api.SingleDepartment, '/api/hospitals/<identifier>')
+    api.add_resource(department_of_hospital_api.AllDepartments, '/api/departments')
+    api.add_resource(department_of_hospital_api.SingleDepartment, '/api/departments/<identifier>')
 
     # adding the employee resources
     api.add_resource(employees_api.AllEmployees, '/api/employees')

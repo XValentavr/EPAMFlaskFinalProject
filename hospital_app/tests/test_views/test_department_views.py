@@ -26,7 +26,7 @@ class TestDepartmentOfHospitalViews(ConfigurationTest):
         Tests whether the get request on departments page works correctly,
         returning the status code 200
         """
-        response = self.app.get('/hospitals')
+        response = self.app.get('/departments')
         self.assertEqual(200, response.status_code)
 
     def test_add_departments_of_hospital(self):
@@ -34,7 +34,7 @@ class TestDepartmentOfHospitalViews(ConfigurationTest):
         Tests whether the get request on add department page works correctly,
         returning the status code 200
         """
-        response = self.app.get('/hospitals/add')
+        response = self.app.get('/departments/add')
         self.assertEqual(200, response.status_code)
 
     def test_edit_department(self):
@@ -45,7 +45,7 @@ class TestDepartmentOfHospitalViews(ConfigurationTest):
         department = Hospital(name="first hospital", to_do="something do")
         database.session.add(department)
         database.session.commit()
-        response = self.app.get('/hospitals/edit/1')
+        response = self.app.get('/departments/edit/1')
         self.assertEqual(200, response.status_code)
 
     def test_delete_department(self):
@@ -56,5 +56,5 @@ class TestDepartmentOfHospitalViews(ConfigurationTest):
         department = Hospital(name="first hospital8", to_do="2")
         database.session.add(department)
         database.session.commit()
-        response = self.app.get('/hospitals/delete/1')
+        response = self.app.get('/departments/delete/1')
         self.assertEqual(302, response.status_code)

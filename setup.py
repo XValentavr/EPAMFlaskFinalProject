@@ -6,7 +6,7 @@ setup(
     author='Valentyn Volynskiy',
     author_email='iwilly17@gmail.com',
     description='Web application to demostrate hospital departments and employees using web server',
-    url='https://github.com/XValentavr/FlaskHospitalApp',
+    url='https://github.com/XValentavr/EPAMFlaskFinalProject',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,

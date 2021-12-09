@@ -7,7 +7,7 @@ from flask_login import login_required, current_user
 from . import user
 
 
-@user.route('/hospitals', methods=["GET"])
+@user.route('/departments', methods=["GET"])
 def get_department_of_hospital():
     """
         This function renders the departments of hospital template
@@ -16,7 +16,7 @@ def get_department_of_hospital():
     return render_template('department_of_hospital/departments.html', session=current_user.is_authenticated)
 
 
-@user.route('/hospitals/delete/<int:identifier>', methods=['GET'])
+@user.route('/departments/delete/<int:identifier>', methods=['GET'])
 @login_required
 def delete_department_of_hospital(identifier):
     """
@@ -27,7 +27,7 @@ def delete_department_of_hospital(identifier):
     return redirect(url_for('user.get_department_of_hospital'))
 
 
-@user.route('/hospitals/add', methods=['GET'])
+@user.route('/departments/add', methods=['GET'])
 @login_required
 def add_department_of_hospital():
     """
@@ -42,7 +42,7 @@ def add_department_of_hospital():
     return render_template('department_of_hospital/department.html', flag=flag)
 
 
-@user.route('/hospitals/edit/<int:identifier>', methods=['GET'])
+@user.route('/departments/edit/<int:identifier>', methods=['GET'])
 @login_required
 def edit_department_of_hospital(identifier):
     """

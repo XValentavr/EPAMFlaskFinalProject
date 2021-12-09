@@ -26,7 +26,7 @@ class TestDepartmentApi(ConfigurationTest):
         database.session.add(department1)
         database.session.add(department2)
         database.session.commit()
-        response = self.app.get('/api/hospitals')
+        response = self.app.get('/api/departments')
         self.assertEqual(200, response.status_code)
 
     def test_get_single_department_of_hospital(self):
@@ -37,7 +37,7 @@ class TestDepartmentApi(ConfigurationTest):
         department1 = Hospital(name='ApiTest1', to_do="something2")
         database.session.add(department1)
         database.session.commit()
-        response = self.app.get('/api/hospitals/1')
+        response = self.app.get('/api/departments/1')
         self.assertEqual(200, response.status_code)
 
     def test_abort_if_department_of_hospital_doesnt_exist(self):
@@ -45,7 +45,7 @@ class TestDepartmentApi(ConfigurationTest):
         Test whether the page aborts with status code 404 if there are no record with
         the specified id in the database
         """
-        response = self.app.delete('/api/hospitals/10')
+        response = self.app.delete('/api/departments/10')
         self.assertEqual(404, response.status_code)
 
     def test_post_department_of_hospital(self):
@@ -57,7 +57,7 @@ class TestDepartmentApi(ConfigurationTest):
             'name': 'ApiTest1',
             'to_do': 'something doing'
         }
-        response = self.app.post('/api/hospitals',
+        response = self.app.post('/api/departments',
                                  data=json.dumps(hospital),
                                  content_type='application/json')
         self.assertEqual(201, response.status_code)
@@ -74,7 +74,7 @@ class TestDepartmentApi(ConfigurationTest):
             'name': 'ApiTest2',
             'to_do': 'something doing2'
         }
-        response = self.app.put('/api/hospitals/1',
+        response = self.app.put('/api/departments/1',
                                 data=json.dumps(hospital),
                                 content_type='application/json')
         self.assertEqual(200, response.status_code)
@@ -87,7 +87,7 @@ class TestDepartmentApi(ConfigurationTest):
         hospital = Hospital(name="Api testing", to_do="to do")
         database.session.add(hospital)
         database.session.commit()
-        response = self.app.delete('/api/hospitals/1')
+        response = self.app.delete('/api/departments/1')
         self.assertEqual(200, response.status_code)
 
     def test_adding_none_values(self):
@@ -99,7 +99,7 @@ class TestDepartmentApi(ConfigurationTest):
             'name': None,
             'to_do': None
         }
-        response = self.app.post('/api/hospitals',
+        response = self.app.post('/api/departments',
                                  data=json.dumps(hospital),
                                  content_type='application/json')
         self.assertEqual(400, response.status_code)
@@ -113,7 +113,7 @@ class TestDepartmentApi(ConfigurationTest):
             'name': '',
             'to_do': ''
         }
-        response = self.app.post('/api/hospitals',
+        response = self.app.post('/api/departments',
                                  data=json.dumps(hospital),
                                  content_type='application/json')
         self.assertEqual(400, response.status_code)
@@ -130,7 +130,7 @@ class TestDepartmentApi(ConfigurationTest):
             'name': None,
             'to_do': 'updated'
         }
-        response = self.app.put('/api/hospitals/1',
+        response = self.app.put('/api/departments/1',
                                 data=json.dumps(hospital2),
                                 content_type='application/json')
         self.assertEqual(400, response.status_code)
@@ -147,7 +147,7 @@ class TestDepartmentApi(ConfigurationTest):
             'name': None,
             'to_do': 'updated'
         }
-        response = self.app.put('/api/hospitals/1',
+        response = self.app.put('/api/departments/1',
                                 data=json.dumps(hospital2),
                                 content_type='application/json')
         self.assertEqual(400, response.status_code)
@@ -164,7 +164,7 @@ class TestDepartmentApi(ConfigurationTest):
             'name': 'updated',
             'to_do': ''
         }
-        response = self.app.put('/api/hospitals/1',
+        response = self.app.put('/api/departments/1',
                                 data=json.dumps(host),
                                 content_type='application/json')
         self.assertEqual(400, response.status_code)

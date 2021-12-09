@@ -1,11 +1,11 @@
 let identifier = document.URL.substring(document.URL.lastIndexOf('/') + 1);
 if (document.title === "Edit department") {
-    fetch(`/api/hospitals/${identifier}`)
+    fetch(`/api/departments/${identifier}`)
         .then((response) => response.json())
         .catch(() => {
             swal("There is no this department. Please select currect department")
                 .then(() => {
-                    window.location = '/hospitals';
+                    window.location = '/departments';
                 });
         })
 }
@@ -28,7 +28,7 @@ function get_data() {
 }
 
 function is_on_edit_department(department, identifier) {
-    fetch(`/api/hospitals/${identifier}`, {
+    fetch(`/api/departments/${identifier}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
@@ -40,7 +40,7 @@ function is_on_edit_department(department, identifier) {
         .then(() => {
             swal("You have seccesfully changed new department of hospital")
                 .then(() => {
-                    window.location = '/hospitals';
+                    window.location = '/departments';
                 });
         })
         .catch(() => {
@@ -52,7 +52,7 @@ function is_on_edit_department(department, identifier) {
 }
 
 function is_on_add_department(department) {
-    fetch(`/api/hospitals`, {
+    fetch(`/api/departments`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -64,13 +64,13 @@ function is_on_add_department(department) {
         .then(() => {
             swal("You have seccesfully added new department of hospital")
                 .then(() => {
-                    window.location = '/hospitals';
+                    window.location = '/departments';
                 });
         })
         .catch(() => {
             swal("An error occured. Please check insert data.")
                 .then(() => {
-                    window.location = '/hospitals/add';
+                    window.location = '/departments/add';
                 });
         })
 }
