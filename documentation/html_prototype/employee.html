@@ -1,10 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="canonical" href="/home">
+    <meta name="description" content="It's start hospital page">
+    <title>Hospital</title>
 <body>
+<style>
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
 
+    table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .agree {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+<ul style="
+         list-style: none;
+         background: #2F4F4F;
+         height: 60px;
+         margin: 0;
+         padding: 0;
+         color: #006400;
+         font-size: 20px;
+         overflow: hidden;">
+    <li>HOSPITAL APP</li>
+    <li><a href="/home" style="
+            float: left;
+            margin: 18px 40px 0 50px;
+            color: #FF4343;
+            text-decoration: none;">Home page</a>
+    </li>
+    <li><a href="/hospital" style="
+            float: left;
+            margin: 18px 40px 0 50px;
+            color: #FF4343;
+            text-decoration: none;">Hospital</a></li>
+    <li><a href="/employees" style="
+            float: left;
+            margin: 18px 40px 0 50px;
+            color: #FF4343;
+            text-decoration: none;">Employees</a>
+    </li>
+    <li style="
+            margin: 18px 40px 0 50px;
+            float: right;
+            color: #FF4343;text-decoration: none;">
+        <a href="/logout">Logout</a>
+    </li>
+    <li style="
+            margin: 18px 10px 0 50px;
+            text-align: center;
+            color: #FF4343;
+            text-decoration: none;">
+        <a href="/login">Login</a>
+    </li>
+</ul>
+<style>
+    body {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+<h1 style="text-align: center">Edit employee</h1>
+
+    <div class="hospital">
+        <form action="" class="form-contact">
+            <label for="Name">Name</label>
+            <input type="text" id="Name" placeholder="type here">
+                <label for="date">Date of birth:</label>
+                <label for="curdate"></label>
+                <input type="text" id="curdate" placeholder="mm/dd/yyyy">
+            <label for="to_do">Salary</label>
+            <input type="text" id="salary" placeholder="type here">
+        </form>
+        <div class="form-group">
+            <label for="department">Select the department</label>
+            <select class="form-control" id="department" name="department">
+            </select>
+        </div>
+    </div>
+<div class="agree" style="text-align: center;">
+    <a href="#" role="button">Submit</a>
+</div>
+<div style="
+         position: fixed;
+         bottom: 2px;
+         width: 100%;
+         background-color: gray;
+         color: white;
+         text-align: center;">
+    <ul style="
+            list-style: none;
+            background: #2F4F4F;
+            height: 60px;
+            margin: 0;
+            padding: 0;
+            color: #006400;
+            font-size: 20px;
+            overflow: hidden;">
+        <li>
+            <button style="
+                  background: cornflowerblue;
+                  color: white;
+                  float:left;
+                  border: none;
+                  padding: 5px;
+                  border-radius: 10px;
+                  margin: 5px;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                  outline: none;">
+                Get more information
+            </button>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+            <script>
+                document.querySelector(".first").addEventListener('click', function () {
+                    swal("This is simple web application.\nYou can check and search for departments of hospital and employees." +
+                        "\nIf you are admin you can delete, add and change information.");
+                });
+            </script>
+        </li>
+        <li style="color:black;float: right"> 2021 - All Right Reserved.</li>
+    </ul>
+</div>
 </body>
 </html>
