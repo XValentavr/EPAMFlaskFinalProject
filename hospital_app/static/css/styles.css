@@ -60,7 +60,7 @@ a:hover {
 
 ul.mainmenu {
     list-style: none;
-    background: #2F4F4F;
+    background: lightgreen;
     height: 60px;
     margin: 0;
     padding: 0;
@@ -84,7 +84,7 @@ ul.mainmenu li a div {
 }
 
 ul.mainmenu li {
-    color: #fdc073;
+    color: black;
     text-decoration: none;
 }
 
@@ -159,7 +159,7 @@ div.login {
     background-color: gray;
     color: white;
     text-align: center;
-    margin-top: 40%;
+    margin-top: 50%;
     bottom: 0;
     height: 50px;
 }
@@ -309,32 +309,33 @@ table th {
     padding: 10px;
 }
 
-.profile-ava img {
-    max-width: 150px;
-    height: auto;
+.profile-ava img {max-width: 150px; height: auto;}
+.profile_table{
+    border:0
 }
+.profile_table tr:hover{
+        background-color: lightgray;
 
+}
 .profile-load {
-    margin-left: 2%;
-    margin-top: 10px;
-    overflow: hidden;
-    max-width: 150px;
+	margin-top: 10px;
+	overflow: hidden;
+	max-width: 150px;
 }
-
 .profile-load input[type=submit], input[type=file] {
-    width: 100%;
-    font-size: 18px;
+	width: 100%;
+	font-size: 18px;
 }
-
 .profile-load p {
-    padding: 0;
-    margin: 5px 0 0 0;
+	padding: 0;
+	margin: 5px 0 0 0;
 }
 
-
+.profile-panel {padding: 0 0 0 10px;}
 ul.profile-info {
-    margin-left: 6%;
-    margin-top: 6%;
-    list-style: none;
-    padding: 0;
+	list-style: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	color: black;
 }
+ul.profile-info li {margin-top: 10px;}

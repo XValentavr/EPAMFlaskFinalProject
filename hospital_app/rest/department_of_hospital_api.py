@@ -40,6 +40,7 @@ class AllDepartments(Resource):
         :return: the 'Department added' response with status code 201
         """
         args = parser.parse_args()
+        print(args)
         if args['name'] is None or args['to_do'] is None:
             abort(Response("Couldn't add department of hospital. Check insert data", 400))
         elif args['name'].strip() == '' or args['to_do'].strip() == '':

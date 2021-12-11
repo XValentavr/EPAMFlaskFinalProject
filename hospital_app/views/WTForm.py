@@ -12,8 +12,8 @@ class LoginForm(FlaskForm):
     This class create WTForm to login admin user. There are four fields to enter data
 
     """
-    username = StringField('Admin username: ', validators=[DataRequired(),
-                                                           Length(min=4, max=25,
-                                                                  message='Field must be between 4 and 100 characters long.')])
+    username = StringField('Admin\'s username: ', validators=[DataRequired(),
+                                                              Length(min=4, max=25,
+                                                                     message='Field must be between 4 and 100 characters long.')])
     password = PasswordField('Password: ', validators=[DataRequired(), Length(min=4, max=100)])
     submit = SubmitField('Enter')

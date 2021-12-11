@@ -38,7 +38,7 @@ function is_on_edit_department(department, identifier) {
     })
         .then((response) => response.json())
         .then(() => {
-            swal("You have seccesfully changed new department of hospital")
+            swal("You have succesfully changed new department of hospital")
                 .then(() => {
                     window.location = '/departments';
                 });
@@ -62,7 +62,7 @@ function is_on_add_department(department) {
     })
         .then((response) => response.json())
         .then(() => {
-            swal("You have seccesfully added new department of hospital")
+            swal("You have succesfully added new department of hospital")
                 .then(() => {
                     window.location = '/departments';
                 });
