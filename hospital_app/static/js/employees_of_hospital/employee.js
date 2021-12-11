@@ -66,7 +66,7 @@ function is_on_edit_employee(employee, identifier) {
     })
         .then((response) => response.json())
         .then(() => {
-            swal("You have succesfully edited new employee")
+            swal("You have edited new employee succesfully")
                 .then(() => {
                     window.location = '/employees';
                 });
@@ -90,7 +90,7 @@ function is_on_add_employee(employee) {
     })
         .then((response) => response.json())
         .then(() => {
-            swal("You have succesfully added new employee")
+            swal("You have added new employee succesfully")
                 .then(() => {
                     window.location = '/employees';
                 });

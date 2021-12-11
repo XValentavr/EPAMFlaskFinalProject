@@ -22,8 +22,8 @@ def populate_database():
     admin1 = Admin('admin', generate_password_hash('12345'), None, 'Valentyn Volysnkyi')
     admin2 = Admin('Valentyn', generate_password_hash('iwilly17'), None,'Ivan Petrov')
 
-    employee_1 = Employee(name='John Doe', salary=1300, date_of_birth=date(1999, 7, 12), hospital_id=71)
-    employee_2 = Employee(name='Jane Wilson', salary=1300, date_of_birth=date(1993, 1, 8), hospital_id=72)
+    employee_1 = Employee(name='John Doe', salary=1300, date_of_birth=date(1999, 7, 12), hospital_id=97)
+    employee_2 = Employee(name='Jane Wilson', salary=1300, date_of_birth=date(1993, 1, 8), hospital_id=98)
     employee_3 = Employee(name='Will Hunting', salary=1300, date_of_birth=date(1989, 11, 30), hospital_id=73)
 
     hospital_1 = Hospital(name='Paramedical', to_do='something do1')
