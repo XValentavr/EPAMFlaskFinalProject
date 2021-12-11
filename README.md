@@ -157,7 +157,7 @@ and returns them in json format
    them in json format
   
 
-  ```json
+```json
      {
     "date_of_birth": "01/08/1993", 
     "hospital_id": "Phisical medicine", 
@@ -167,7 +167,8 @@ and returns them in json format
   }
 ```
  #### Here is the list of available addresses of web application:
- 
+
+
  - /departments - display all the departments
  - /departments/add - add a new department
  - /departments/edit/*id* - edit a department with a specified id (replace the *id* with some value)
