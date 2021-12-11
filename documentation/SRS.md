@@ -13,8 +13,9 @@ Application should provide:
 - Search employees born on a certain date range
 
 ## 1. Homepage
-The homepage of the app contains a brief description 
-of the app and a button to start the work
+The homepage of the app buttom to get short description
+![21](./SRSImages/info.png)
+
 
 *Main scenario:*
 
