@@ -168,12 +168,16 @@ and returns them in json format
 ```
  #### Here is the list of available addresses of web application:
 
+    
+ #### Departments
 
  - /departments - display all the departments
  - /departments/add - add a new department
  - /departments/edit/*id* - edit a department with a specified id (replace the *id* with some value)
    
    
+#### Employees
+
  - /employees - display all the employees
  - /employees/add - add a new employee
  - /employees/edit/*id* - edit an employee with a specified id (replace the *id* with some value)
@@ -181,11 +185,16 @@ and returns them in json format
   - /employees?start_date=*start_date*&end_date=*end_date* - 
   search employees born beetween dates
     
+
+#### General
+
  - /home - home page
+   
+#### Admin
 
  - /profile - display admins profile
  - /login - login as admin
  - /logout - logout from current accaunt
 
 
-  For more details read the [specification](documentation/SRS.md)
+  All details are in [specification](documentation/SRS.md)
