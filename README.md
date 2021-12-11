@@ -14,8 +14,9 @@ and a search field to search for employees born on a
  
  ## How to build
  #### Clone the repo  
- ```git@gitlab.com:XValentavr/EPAMFlaskFinalProject.git```
-   
+ ```git@github.com:XValentavr/EPAMFlaskFinalProject.git```
+
+or download as an archive
  #### Install all the dependencies
  ```pip install -r requirements.txt```
  
@@ -86,7 +87,7 @@ Replace the \*key*, \*user* and the \*password* with your own values
     "id": 97, 
     "name": "Paramedical", 
     "to_do": "something do1"
-  }, 
+  }
 ]
 ```
 - GET /api/departments/*id* - return the department with the given id 
