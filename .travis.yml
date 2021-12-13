@@ -7,6 +7,6 @@ install:
   - pip install -r requirements.txt
   - pip install -e .
 
-  — pytest --cov=hospital_app/tests
+  — pytest --cov=home/travis/build/XValentavr/EPAMFlaskFinalProject/hospital_app/tests
 after_success:
   — coveralls
