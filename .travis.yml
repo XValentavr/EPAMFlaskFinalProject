@@ -1,17 +1,15 @@
 language: python
 python:
   - "3.9"
+install:
+  pip install -r requirements.txt
 services:
   - mysql
-install:
-  - pip install -r requirements.txt
-
-before_script:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
-
+before_install:
+  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('root') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
+  - sudo service mysql restart
 script:
   - pylint hospital_app
-  - coverage report
-
+  - coverage run -m unittest discover
 after_success:
-  - coveralls
+  coveralls
