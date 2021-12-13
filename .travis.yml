@@ -1,13 +1,12 @@
+dist: xenial
 language: python
 python:
   - "3.9"
 
-
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements_dev.txt
+  - pip install -e .
 
-script:
-  - pylint hospital_app
-
+  — pytest --cov=hospital_app/tests
 after_success:
-  - coveralls
+  — coveralls
