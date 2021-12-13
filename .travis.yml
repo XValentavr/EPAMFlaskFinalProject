@@ -2,10 +2,11 @@ dist: xenial
 language: python
 python:
   - "3.9"
-
+before_script:
+  - export PYTHONPATH=home/travis/build/XValentavr/EPAMFlaskFinalProject/hospital_app/tests
 install:
   - pip install -r requirements.txt
 
-  — pytest --cov=home/travis/build/XValentavr/EPAMFlaskFinalProject/hospital_app/tests
+  — pytest --cov=tests
 after_success:
   — coveralls
