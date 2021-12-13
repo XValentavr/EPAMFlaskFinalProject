@@ -1,6 +1,6 @@
 dist: xenial
 language: python
-python: 3.10
+python: Python 3.10.0
 install:
   - pip install -r requirements.txt
   - pip install -e .
