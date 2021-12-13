@@ -10,5 +10,7 @@ before_install:
   - sudo service mysql restart
 script:
   - coverage run -m unittest discover
+  - coverage report
+
 after_success:
   coveralls
