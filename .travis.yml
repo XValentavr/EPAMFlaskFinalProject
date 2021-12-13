@@ -9,7 +9,6 @@ before_install:
   - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('root') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
   - sudo service mysql restart
 script:
-  - pylint hospital_app
   - coverage run -m unittest discover
 after_success:
   coveralls
