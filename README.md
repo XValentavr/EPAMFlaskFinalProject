@@ -1,3 +1,6 @@
+<img src="https://coveralls.io/repos/github/XValentavr/EPAMFlaskFinalProject/badge.svg" alt="Coverage Status" />
+https://coveralls.io/github/XValentavr/EPAMFlaskFinalProject
+
 # Hospital app
 This is a web application for managing departments and
 employees of hospital. It uses a RESTful web service to perform crud 
